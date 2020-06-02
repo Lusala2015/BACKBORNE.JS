@@ -3,28 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Backbornejs</title>
+    <title>Backbonejs</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.css">
 </head>
 <body>
     <div class="container">
         <h1>User Manager </h1>
         <hr>
-        <div class="pages"></div>
+        <div class="page"></div>
     </div>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.4.0/backbone-min.js"></script>
     <script>
 
-       var UserList = Backborne.View.extend({
-           el: 'page',
+       var UserList = Backbone.View.extend({
+           el: '.page',
            render: function(){
                this.$el.html('!CONTENT SHOULD SHOW HERE!!');
            }
        });
 
-        var Router = Backborne.Router.extend({
+        var Router = Backbone.Router.extend({
             routes: {
                 '': 'home'
             }
@@ -32,12 +32,12 @@
 
         var userList = new UserList();
 
-        var Router = new Router();
-        router.on('router: home', function (){
+        var router = new Router();
+        router.on('router:home', function (){
             userList.render();
         });
 
-        Backborne.history.start();
+        Backbone.history.start();
     </script>
 </body>
 </html>
